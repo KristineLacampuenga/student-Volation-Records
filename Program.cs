@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace StudentViolationRecordsManagementSystem
 {
@@ -6,7 +6,7 @@ namespace StudentViolationRecordsManagementSystem
     {
         static void Main(string[] args)
         {
-             Console.WriteLine("Welcome to Student Violation Records Management System");
+            Console.WriteLine("Welcome to Student Violation Records Management System");
             Console.WriteLine();
             Console.WriteLine("Student Information");
 
@@ -20,7 +20,8 @@ namespace StudentViolationRecordsManagementSystem
             string studentcourse = "DICT";
             string studentyearlevel = "First year";
 
-            for (int c = 0; c < 3; c++)
+            int c = 0;
+            for (; c < 3; c++)
             {
 
                 Console.WriteLine();
@@ -49,44 +50,85 @@ namespace StudentViolationRecordsManagementSystem
                     Console.WriteLine();
                     Console.WriteLine("Invalid Input");
                 }
+                if (c == 2)
+                {
+                    Environment.Exit(0);
+                }
             }
-            for (int v = 0; v < 3; v++)
-            {
+            //int v = 0;
+            //for (; v < 3; v++)
+        {
 
-            Console.WriteLine();
-            Console.WriteLine("Violated Classroom Rules");
+                //Console.WriteLine();
+                //Console.WriteLine("Violated School Rules:");
 
-            string name = "kristine B. Lacampuenga";
+                //string name = "kristine B. Lacampuenga";
 
-            string rule1 = " Noise when the teacher is talking";
-            string rule2 = " Noise when classmates are talking.";
-            string rule3 = " Didn't Respect and listen to thier classmates.";
-            string rule4 = " Always Late";
+                //string rule1 = " Cheating";
+                //string rule2 = " Disrespect for Authority";
+                //string rule3 = " Classroom Distruption";
+                //string rule4 = " Always Late";
 
-            Console.WriteLine();
-            Console.Write("Enter Full Name:");
-            string codeInput = Console.ReadLine();
+                //Console.WriteLine();
+                //Console.Write("Enter Full Name:");
+                //string codeInput = Console.ReadLine();
 
-            if (codeInput == name)
-            {
+                //if (codeInput == name)
+                //{
+                //    Console.WriteLine();
+                //    Console.WriteLine("Violated Rules:" + rule1);
+                //    Console.WriteLine("Violated Rules:" + rule2);
+                //    Console.WriteLine("Violated Rules:" + rule3);
+                //    Console.WriteLine("Violated Rules:" + rule4);
+                //    break;
+                //}
+                //else
+                //{
+                //    Console.WriteLine();
+                //    Console.WriteLine("Invalid Input");
+                //}
+                //if (v == 2)
+                //{
+                //    Environment.Exit(0);
+                //}
                 Console.WriteLine();
-                Console.WriteLine("Violated Rules:" + rule1);
-                Console.WriteLine("Violated Rules:" + rule2);
-                Console.WriteLine("Violated Rules:" + rule3);
-                Console.WriteLine("Violated Rules:" + rule4);
-                break;
+                Console.WriteLine("Violated School Rules:");
+                var violatedRules = new[] { " Cheating", " Disrespect for Authority", " Classroom Distruption", " Always Late" };
+
+                foreach (var violated in violatedRules)
+                {
+                    Console.WriteLine($"Violated Rules: {violated}");
+                }
             }
-            else
+            Console.WriteLine();
+            Console.WriteLine("Notes*");
+            Console.WriteLine("Student actions on or off campus that allegedly violate university behavioral standards," +
+                " the Code, or federal, state, and local laws, may subject the student to concurrent jurisdiction of," +
+                " and the imposition of a sanction by, both the university and civil authorities." +
+                " The university may enforce its own regulations and student violations of the Code regardless of any" +
+                " proceedings instituted by authorities or may proceed with campus disciplinary hearings without waiting " +
+                "for results of off-campus criminal proceedings fear of violating student constitutional rights, " +
+                "particularly the right of self-incrimination. ");
+            Console.WriteLine();
+            Console.WriteLine("Student Also violated the school Rules:");
+            Console.WriteLine();
+            String[,] students =
             {
-                Console.WriteLine();
-                Console.WriteLine("Invalid Input");
+                {"Perez", "Gonsales", "Mendez", "Cruz" },
+                {"Cheating and Alcoholic Deverages", "Disrespect for Authority and Verbal abuse", "Illigal used of Telephone", "Alcoholic Beverages"}
+
+            };
+            for (int titleIndex = 0; titleIndex < students.GetLength(0) - 1; titleIndex++)
+            {
+                for (int violationIndex = 0; violationIndex < students.GetLength(1); violationIndex++)
+                {
+                    Console.WriteLine($"{students[titleIndex, violationIndex]}" +$": {students[titleIndex + 1, violationIndex]}");
+                }
             }
+              
         }
-
-
-        }
-
 
     }
 }
+
 
